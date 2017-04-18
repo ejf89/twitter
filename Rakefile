@@ -1,5 +1,8 @@
-require 'bundler'
-Bundler::GemHelper.install_tasks
+# require 'bundler'
+require_relative 'config/environment'
+require 'sinatra/activerecord/rake'
+
+# Bundler::GemHelper.install_tasks
 
 task :erd do
   FORMAT = 'svg'.freeze
@@ -28,7 +31,8 @@ Yardstick::Rake::Verify.new do |verify|
   verify.threshold = 59.0
 end
 
-task :environment do
+desc 'starts a console'
+task :console do
   Pry.start
 end
 
