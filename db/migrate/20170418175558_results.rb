@@ -1,7 +1,7 @@
-class CreateResults < ActiveRecord::Migration
+class Results < ActiveRecord::Migration[5.0]
   def change
     create_table :results do |t|
-      t.string :search_word
+      t.string :search
       t.string :vibe
     end
   end
