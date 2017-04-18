@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418175558) do
+ActiveRecord::Schema.define(version: 20170418205945) do
 
   create_table "results", force: :cascade do |t|
     t.string "search"
     t.string "vibe"
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.string "user_name"
+    t.string "content"
+    t.string "location"
+    t.string "date"
   end
 
 end
