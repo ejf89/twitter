@@ -43,18 +43,23 @@ puts "please enter a search"
 answer = gets.chomp
 
 
-results = client.search("#{answer}", {result_type: "all", language: "av"}).take(1).each
+results = client.search("#{answer} -RT", {language: "av", include_rts: false}).take(2)
+  tweet_result = results.map do |x|
+    x.attrs[:text]
+    end
+    binding.pry
+tweet_result
 
-puts results
 
 
-def client.get_all_tweets(user)
-  collect_with_max_id do |max_id|
-    options = {count: 20, include_rts: true}
-    options[:max_id] = max_id unless max_id.nil?
-    user_timeline(user, options)
-  end
-end
+
+# def client.get_all_tweets(user)
+#   collect_with_max_id do |max_id|
+#     options = {count: 20, include_rts: true}
+#     options[:max_id] = max_id unless max_id.nil?
+#     user_timeline(user, options)
+#   end
+# end
 
 
 
