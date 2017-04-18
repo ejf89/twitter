@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'jruby-openssl', platforms: :jruby
 gem 'rake'
 gem 'yard'
+gem 'sinatra-activerecord'
+gem 'require_all'
+gem 'sqlite3'
 
 group :development do
   gem 'pry'

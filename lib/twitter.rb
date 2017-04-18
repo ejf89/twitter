@@ -39,16 +39,16 @@ client = Twitter::REST::Client.new do |config|
   config.access_token_secret = "rT0kBstReKuP5Zefz3fiTLeHYXtajJSOzvzxVcw9NjGEo"
 end
 
-puts "please enter a search"
-answer = gets.chomp
+# puts "please enter a search"
+# answer = gets.chomp
 
 
-results = client.search("#{answer} -RT", {language: "av", include_rts: false}).take(2)
-  tweet_result = results.map do |x|
-    x.attrs[:text]
-    end
-    binding.pry
-tweet_result
+# results = client.search("#{answer} -RT", {language: "av", include_rts: false}).take(2)
+#   tweet_result = results.map do |x|
+#     x.attrs[:text]
+#     end
+#     # binding.pry
+# tweet_result
 
 
 
@@ -64,4 +64,4 @@ tweet_result
 
 
 
-binding.pry
+# binding.pry
