@@ -1,8 +1,8 @@
-require 'bundler'
+# require 'bundler'
 require_relative 'config/environment'
 require 'sinatra/activerecord/rake'
 
-Bundler::GemHelper.install_tasks
+# Bundler::GemHelper.install_tasks
 
 task :erd do
   FORMAT = 'svg'.freeze

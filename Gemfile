@@ -6,6 +6,7 @@ gem 'yard'
 gem 'sinatra-activerecord'
 gem 'require_all'
 gem 'sqlite3'
+gem 'twitter'
 
 group :development do
   gem 'pry'
@@ -21,5 +22,3 @@ group :test do
   gem 'yardstick'
   gem 'json'
 end
-
-gemspec

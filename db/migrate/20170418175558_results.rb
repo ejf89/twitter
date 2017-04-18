@@ -1,4 +1,4 @@
-class Results < ActiveRecord::Migration[5.0]
+class Results < ActiveRecord::Migration
   def change
     create_table :results do |t|
       t.string :search
