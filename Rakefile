@@ -28,4 +28,8 @@ Yardstick::Rake::Verify.new do |verify|
   verify.threshold = 59.0
 end
 
+task :environment do
+  Pry.start
+end
+
 task default: [:spec, :rubocop, :verify_measurements]

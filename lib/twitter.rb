@@ -29,3 +29,34 @@ require 'twitter/target_user'
 require 'twitter/trend'
 require 'twitter/tweet'
 require 'twitter/user'
+require 'pry'
+require 'json'
+
+client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = "W3zilQu633o77oezuSwi5D6m8"
+  config.consumer_secret     = "J2gvkPupioUbhIXqFXLsAzrROdlLdozFZwukkLgGvOxPnCAs4i"
+  config.access_token        = "854334169522024448-qNV9YdJzI0B3YshEMCjdb7mB8CMXDEA"
+  config.access_token_secret = "rT0kBstReKuP5Zefz3fiTLeHYXtajJSOzvzxVcw9NjGEo"
+end
+
+puts "please enter a search"
+answer = gets.chomp
+
+
+results = client.search("#{answer}", {result_type: "all", language: "av"}).take(1).each
+
+puts results
+
+
+def client.get_all_tweets(user)
+  collect_with_max_id do |max_id|
+    options = {count: 20, include_rts: true}
+    options[:max_id] = max_id unless max_id.nil?
+    user_timeline(user, options)
+  end
+end
+
+
+
+
+binding.pry
